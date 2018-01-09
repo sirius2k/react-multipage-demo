@@ -1,6 +1,10 @@
 ```bash
 $ npm init
 $ git init
+$ git remote add origin https://github.com/sirius2k/react-multipage-demo.git
+$ git add .
+$ git commit -m "initial commit"
+$ git push -u origin master
 ```
 
 kwpark-MacBook-pro:react-multipage-demo kwpark$ npm init         
