@@ -1,5 +1,8 @@
+## Synopsis
+
 This project is demo for react which renders mutiple pages without using create-react-project. It will shows how we can setup react project from scratch.
 
+## Code Example
 Initial project create and push it to the git repository
 ```bash
 $ npm init
@@ -23,3 +26,10 @@ $ npm i --save extract-text-webpack-plugin@2.0.0-rc.3
 $ npm i --save babel-core babel-loader babel-preset-es2015 babel-preset-react node-sass sass-loader css-loader style-loader
 ```
 (Note : It's important to install the non-default version of extract-text-plugin as it's not compatible with the latest version of Webpack.)
+
+## Routing
+react-router to get React to show different views for different URLs.
+
+```javascript
+
+```
