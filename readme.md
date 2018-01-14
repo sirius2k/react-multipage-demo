@@ -1,9 +1,8 @@
 ## Synopsis
+This is demo prject for react which renders mutiple pages without using create-react-project. It will shows how we can setup react project from scratch.
 
-This project is demo for react which renders mutiple pages without using create-react-project. It will shows how we can setup react project from scratch.
-
-## Code Example
-Initial project create and push it to the git repository
+## Initialize project
+Create initial project and push it to the git repository
 ```bash
 $ npm init
 $ git init
@@ -28,8 +27,37 @@ $ npm i --save babel-core babel-loader babel-preset-es2015 babel-preset-react no
 (Note : It's important to install the non-default version of extract-text-plugin as it's not compatible with the latest version of Webpack.)
 
 ## Routing
-react-router to get React to show different views for different URLs.
+Used react-router to get React to show different views for different URLs. index.jsx set up router and import right SCSS files. And, routes.jsx to actually define them.
+
+index.jsx
+```javascript
+import React from 'react';
+import ReactDom from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
+require('./css/base.scss');
+require('./css/home.scss');
+require('./css/contact.scss');
+ReactDom.render(
+  <Router history={browserHistory} routes={routes} />,
+  document.querySelector('#app')
+);
+```
 
 ```javascript
-
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
+import App from './components/app';
+import Home from './components/views/home';
+import Contact from './components/views/contact';
+export default (
+  <Route path='/' component={App}>
+    <IndexRoute component={Home} />
+    <Route path='contact' component={Contact} />
+    <Route path='*' component={Home} />
+  </Route>
+);
 ```
+As you can see, the / path will get routed to app.jsx, and we'll set up two views for / (home.jsx) and /contact (contact.jsx). We also specify that any URL not specified should server up {home}.
+
+## Views and controllers
