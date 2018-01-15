@@ -64,3 +64,45 @@ export default (
 As you can see, the / path will get routed to app.jsx, and we'll set up two views for / (home.jsx) and /contact (contact.jsx). We also specify that any URL not specified should server up {home}.
 
 ## Views and controllers
+We can actually setup some of the simple controllers for the different pages we want to serve.
+
+```javascript
+import React, { Component } from "react";
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+```
+
+It does nothing but set up a sacffold to show the views we'll set up as follows. Start with home.jsx
+
+```javascript
+import React, { Component } from "react";
+import { browserHistory } from 'react-router';
+export default class Home extends Component {
+  componentDidMount() {
+    browserHistory.push('/');
+  }
+  render() {
+    return (
+      <div id="home">
+        This is the home page.
+      </div>
+    );
+  }
+}
+```
+
+This will catch all view and change the URL to / if someone hits this view. (e.g. If someone requests /test, it will server up the Home view and change the URL to /.)
+
+
+
+
+
+
+
