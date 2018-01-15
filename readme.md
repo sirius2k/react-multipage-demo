@@ -68,6 +68,7 @@ We can actually setup some of the simple controllers for the different pages we 
 
 ```javascript
 import React, { Component } from "react";
+
 export default class App extends Component {
   render() {
     return (
@@ -84,6 +85,7 @@ It does nothing but set up a sacffold to show the views we'll set up as follows.
 ```javascript
 import React, { Component } from "react";
 import { browserHistory } from 'react-router';
+
 export default class Home extends Component {
   componentDidMount() {
     browserHistory.push('/');
