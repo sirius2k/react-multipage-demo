@@ -100,11 +100,62 @@ export default class Home extends Component {
 }
 ```
 
-This will catch all view and change the URL to / if someone hits this view. (e.g. If someone requests /test, it will server up the Home view and change the URL to /.)
+This will catch all view and change the URL to / if someone hits this view. (e.g. If someone requests /test, it will serve up the Home view and change the URL to /.)
 
+And, this is very silimar contact.jsx
 
+```javascript
+import React, { Component } from "react";
 
+export default class Contact extends Component {
+	render() {
+		return (
+			<div id="contact">
+				This is the contact me page.
+			</div>
+		);
+	}
+}
+```
 
+## Style
+Set up some dummy SASS files just to see everything checks out in the compilation. 
 
+Here's base.scss
+```scss
+$var: blue;
 
+body {
+	background: $var;
+}
+```
 
+And, contact.scss
+```scss
+#contact {
+	color: #fff;
+}
+```
+
+finally, home.scss
+```scss
+#home {
+	color: red;
+}
+```
+
+These are what we'll eventually use to store our actual page-specific css styling.
+
+## Express and Webpack
+When we deploy our app, express is a very thin wrapper around webpack.
+
+Let's change package.json to let it know to use our version of Node as the engine and to change the entry point from index.js to server.js
+
+```json
+...
+	"main": "server.js",
+	"engines": {
+		"node": ">=7.5.0"
+	},
+...
+```
