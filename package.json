@@ -2,7 +2,10 @@
   "name": "react-multipage-demo",
   "version": "1.0.0",
   "description": "This is a react multipage demo project.",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+  	"node": ">=7.5.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
